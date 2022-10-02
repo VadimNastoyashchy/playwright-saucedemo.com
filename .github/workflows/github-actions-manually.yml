@@ -1,0 +1,21 @@
+name: GitHub Actions Manually
+on: [workflow_dispatch]
+jobs:
+  e2e-tests:
+    runs-on: ubuntu-latest # or macos-latest, windows-latest
+
+    steps:
+      - uses: actions/checkout@v2
+
+      - uses: actions/setup-node@v1
+
+      - uses: microsoft/playwright-github-action@v1
+
+      - name: Install dependencies
+        run: npm install
+
+      - name: Install browsers
+        run:  npm i playwright-chromium
+
+      - name: Run tests
+        run: npx playwright test

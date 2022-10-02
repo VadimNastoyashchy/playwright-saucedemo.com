@@ -1,0 +1,30 @@
+{
+  "name": "playwright-saucedemo.com",
+  "version": "1.0.0",
+  "description": "🎭 Playwright test automation project for testing saucedemo.com",
+  "main": "index.js",
+  "scripts": {
+    "test": "npx playwright test",
+    "report": "npx playwright show-report"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/VadimNastoyashchy/playwright-saucedemo.com.git"
+  },
+  "keywords": [
+    "playwright",
+    "typescript",
+    "testautomation",
+    "saucedemo.com",
+    "pageobject"
+  ],
+  "author": "vadym nastoiashchyi",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/VadimNastoyashchy/playwright-saucedemo.com/issues"
+  },
+  "homepage": "https://github.com/VadimNastoyashchy/playwright-saucedemo.com#readme",
+  "devDependencies": {
+    "@playwright/test": "1.26.1"
+  }
+}
