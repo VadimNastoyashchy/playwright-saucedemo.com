@@ -4,9 +4,10 @@ import ICredentials from '../ICredentials';
 
 export default class LoginPage extends BasePage {
 
-    private readonly inputEmailField = this.page.locator('[data-test="username"]');
-    private readonly inputPasswordField = this.page.locator('[data-test="password"]');
+    public readonly inputEmailField = this.page.locator('[data-test="username"]');
+    public readonly inputPasswordField = this.page.locator('[data-test="password"]');
     private readonly logInButton = this.page.locator('[data-test="login-button"]');
+    private readonly errorText = this.page.locator('.error-message-container');
 
     constructor(page: Page) {
         super(page, 'LogIn Page');
@@ -29,5 +30,9 @@ export default class LoginPage extends BasePage {
         await this.enterEmail(userName);
         await this.enterPassword(password);
         await this.clickOnLogInButton();
+    }
+
+    public async getErrorMessage(): Promise<string> {
+        return await this.errorText.innerText();
     }
 }
