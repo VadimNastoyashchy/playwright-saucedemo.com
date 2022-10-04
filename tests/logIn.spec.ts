@@ -1,5 +1,6 @@
 import { expect, test } from '@playwright/test';
 import { AccountType } from '../src/AccountType';
+import ApiService from '../src/ApiService';
 import Credentials from '../src/Credentials';
 import InventoryPage from '../src/pages/InventoryPage';
 import LoginPage from '../src/pages/LoginPage';
@@ -46,5 +47,14 @@ test.describe('Login and Logout test', () => {
         await expect(await page.url()).toContain(await loginPage.getPageUrl());
         await expect(await loginPage.inputEmailField).toHaveValue('');
         await expect(await loginPage.inputPasswordField).toHaveValue('');
+    });
+
+    test('Login with \'standard\' user with set cookies', async ({ page }) => {
+        const apiService = new ApiService(page);
+        const inventoryPage = new InventoryPage(page);
+
+        await apiService.logIn(Credentials.getUserCredentials(AccountType.Standard));
+        await inventoryPage.open();
+        await expect(await page.url()).toContain(await inventoryPage.getPageUrl());
     });
 });
