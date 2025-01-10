@@ -13,7 +13,8 @@ jobs:
         with:
           node-version: "20"
 
-      - uses: microsoft/playwright-github-action@v1
+      - name: Install playwright dependencies
+        run: npx playwright install --with-deps chromium
 
       - name: Install dependencies
         run: npm install
