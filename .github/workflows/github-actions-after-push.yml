@@ -1,4 +1,4 @@
-name: GitHub Actions After Push Into Develop Branch
+name: GitHub Actions After PR > Master
 on:
   pull_request:
     branches: master
