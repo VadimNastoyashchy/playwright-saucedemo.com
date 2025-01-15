@@ -10,3 +10,24 @@ Install all the necessary dependency using npm :
 ```
 npm install
 ```
+
+### Run the test
+
+```
+npm run test
+```
+or 
+```
+npx playwright test
+```
+
+### Generate the report
+
+```
+npm run report
+```
+or
+
+```
+npx playwright show-report
+```
