@@ -12,7 +12,7 @@ type MyFixtures = {
 export const test = base.extend<MyFixtures>({
   loginPage: async ({ page }, use) => {
     const loginPage = new LoginPage(page);
-    await page.routeFromHAR('./../cache/cache.har', { notFound: 'fallback', update: false });
+    await page.routeFromHAR('../cache/cache.har', { notFound: 'fallback', update: false });
     await use(loginPage);
   },
   inventoryPage: async ({ page }, use) => {
