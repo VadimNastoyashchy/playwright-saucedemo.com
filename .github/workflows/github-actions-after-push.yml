@@ -1,8 +1,7 @@
 name: GitHub Actions After Push Into Develop Branch
 on:
-  push:
-    branches:
-      - develop
+  pull_request:
+    branches: master
 jobs:
   e2e-tests:
     timeout-minutes: 60
