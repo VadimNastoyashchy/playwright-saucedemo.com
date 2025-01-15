@@ -1,4 +1,5 @@
 import { Page } from '@playwright/test';
+import { step } from '../setup/step';
 
 export default abstract class BasePage {
     protected readonly BASE_PAGE = 'https://www.saucedemo.com/';
@@ -13,6 +14,7 @@ export default abstract class BasePage {
         this.PAGE_URL = pageUrl;
     }
 
+    @step()
     public async open(): Promise<void> {
         await this.page.goto(`${this.BASE_PAGE}${this.PAGE_URL}`);
     }
