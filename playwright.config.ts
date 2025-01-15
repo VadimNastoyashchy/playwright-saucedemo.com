@@ -43,6 +43,7 @@ const config: PlaywrightTestConfig = {
     trace: 'on-first-retry'
   },
 
+  globalSetup: require.resolve('./src/setup/cacheWarmer.ts'),
   /* Configure projects for major browsers */
   projects: [
     {
