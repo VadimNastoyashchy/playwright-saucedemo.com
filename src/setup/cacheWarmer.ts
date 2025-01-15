@@ -2,7 +2,7 @@ import { chromium } from '@playwright/test';
 import fs from 'fs';
 import LoginPage from '../pages/LoginPage';
 
-const dir = './cache';
+const dir = 'cache';
 
 // eslint-disable-next-line @typescript-eslint/explicit-function-return-type
 export default async function globalSetup() {
