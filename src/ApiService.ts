@@ -1,5 +1,6 @@
 import { Page } from '@playwright/test';
 import ICredentials from './ICredentials';
+import { step } from './setup/step';
 
 export default class ApiService {
     private readonly page: Page;
@@ -8,6 +9,7 @@ export default class ApiService {
         this.page = page;
     }
 
+    @step()
     public async logIn(credentials: ICredentials): Promise<void> {
         const { userName } = credentials;
         const cookiesData = {
